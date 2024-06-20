@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+      body {
+        margin: auto;
+        padding: 30px;
+        background-color: #f7ecde;
+      }
+      .container form {
+            display: flex;
+            flex-direction: column;
+        }
+      .container img {
+        width: 100px;
+        display: flex;
+        margin: 20px auto;
+      }
+      .container h1{
+        padding: 10px;
+      }
+      .content {
+        background-color: white;
+        margin: 20px;
+        padding: 30px;
+        border-radius: 10px;
+      }
+      .content input {
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      button {
+        margin: 5px;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+      }
+      .info_check:hover{
+        background-color: #54bab9;
+      }
+
+      .info_cancle:hover{
+        background-color:  rgb(245, 112, 112);
+      }
+     
+      .footer {
+        background-color: #e9dac1;
+        margin: 10px;
+        padding: 10px;
+      }
+    </style>
+    <script>
+       $(document).ready(function () {
+        $("#newPassword").on("input", function () {
+          const 비밀번호 = $(this).val();
+          const 정규식 = /^[a-z 0-9]{8,}$/; 
+
+          if (정규식.test(비밀번호)) {
+            $("#정규식메세지")
+              .text("비밀번호 형식이 올바릅니다.")
+              .css("color", "green");
+          } else {
+            $("#정규식메세지")
+              .text("비밀번호는 최소 8자 이상이어야하며, 소문자만 가능합니다.")
+              .css("color", "red");
+          }
+        });
+      
+
+        $("#newPasswordConfirm").on("input",function(){
+          const newPW = $("#newPassword").val();
+          const newPwConfirm = $(this).val();
+
+          if(newPW === newPwConfirm){
+            $("#msg").text("비밀번호가 일치합니다.").css("color", "green");
+          }else{
+            $("#msg").text("비밀번호가 일치합니다.").css("color", "red");
+          }
+        });
+
+        function pwChange(){
+          alert("비밀번호 변경이 완료되었습니다.");
+        }
+        function pwChangeCancle(){
+          alert("취소되었습니다.");
+        }
+      });
+
+    </script>
+  </head>
+  <body>
+    
+      <div class="container">
+        <h1><strong>비밀번호 변경</strong></h1>
+        
+        <form class="content">
+          <lable>현재 비밀번호 : </lable>
+          <input type="password" id="password" required>
+          <br>
+          
+
+          <lable>새 비밀번호 :</lable>
+          <input type="password" id="newPassword">
+          <p id="정규식메세지"></p>
+
+
+          <lable>새 비밀번호 확인 :</lable>
+          <input type="password" id="newPasswordConfirm">
+          <p id="msg"></p>
+          
+          <br>
+
+          <button class="info_check" onclick="pwChange()">변경</button>
+          <button class="info_cancle" onclick="pwChangeCancle()">취소</button>
+        </form>
+      </div>
+    
+
+    <!--footer-->
+    <footer class="footer mt-5">
+      <div class="container text-center">
+        <p>&copy; 2024 브랜드명.All Right Reserved.</p>
+        <p>개인정보처리방침 | 이용약관</p>
+      </div>
+    </footer>
+  </body>
+</html>
