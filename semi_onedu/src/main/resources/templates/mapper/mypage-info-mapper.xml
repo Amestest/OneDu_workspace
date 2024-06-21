@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.onedumall.mapper.MyinfoMapper">
+
+	<select id="getAllmember" resultType="com.onedumall.dto.MyInfo">
+	
+		SELECT members_name, members_email, members_address, members_phone, members_birth
+	 	FROM members
+	
+	</select>
+</mapper>
