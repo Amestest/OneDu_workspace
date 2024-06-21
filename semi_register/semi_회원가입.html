@@ -37,6 +37,18 @@
                     event.preventDefault();
                 }
             }
+         const pwval = document.getElementById("pw1") ;
+         const pwvalcheck = document.getElementById("pw2");
+         function checkpw(){
+          const pw = pwval.value;
+          const pw_confirm = pwvalcheck.value;
+
+          if (pw == pw_confirm) {
+            alert("비밀번호가 일치합니다.");
+          } else {
+            alert("비밀번호가 일치하지 않습니다.");
+          }
+        }        
         </script>
     </head>
     <body>  
@@ -85,12 +97,14 @@
         <br>
         <label>비밀번호확인</label>
         <input type="password" id="pw2" required>
+        <button onclick="비밀번호일치여부()">비밀번호 일치확인</button>
         <br>
         <label>이름</label>
         <input type ="text" name="signName">
         <br>
         <label>이메일</label>
         <input type = "text" name="signEmail">
+        <button>이메일 인증하기</button>
         <br>
         <label>주소</label>
         <input type = "text" name="signAddress">
@@ -101,9 +115,9 @@
         <label>생년월일</label>
         <input type = "date" name="signBirth">
         <br>
-        <button type="submit" onclick="registerbutton(event)">회원가입완료</button>
+        <button type="submit" class="commit" onclick="registerbutton(event)">회원가입완료</button>
         </form>
-    </div>
+    
     <footer>
         <p>&copy; 2024 원두쓰리포 쇼핑몰 All right resverd</p>
     </footer>

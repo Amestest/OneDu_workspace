@@ -19,7 +19,6 @@ header {
   font-size: 20px;
   font-style: normal;
   font-weight: bold;
-  
 }
 .menubar a {
   margin-right: 25px;
@@ -85,4 +84,21 @@ button {
     width: 100%;
     bottom: 0;
    
+  }
+  .slider{
+    width: 100%;
+    overflow: hidden;
+    position: inherit;
+    
+  }
+  .slide{
+    float: left;
+    width:100%;
+    position: relative;
+    
+  }
+  img{
+    width: 100%;
+    height: auto;
+    
   }
