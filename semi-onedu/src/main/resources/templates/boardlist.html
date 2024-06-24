@@ -25,33 +25,37 @@
 					<div class="count">조회</div>
 				</div>
 			
-					<!--  <div>
+					<!--   <div>
 						<div class="num">1</div>
 						<div class="title">
-							<a href="/boardView">오늘 게시글</a>
+							<a href="/boardView">6월 이벤트</a>
 						</div>
-						<!-- <div class="title"><a th:href="@{'/boardView/' + ${board.board_id}}">오늘 게시글</a></div> 
-						<div class="writer">가나다</div>
-						<div class="date">2024/06/18</div>
+						<!--  <div class="title"><a th:href="@{'/boardView/' + ${board.board_id}}">오늘 게시글</a></div>
+						<div class="writer">원두쓰리포</div>
+						<div class="date">24/06/18</div>
 						<div class="count">100</div>
-					</div>
-				 -->
+					</div> -->
+				
 					
-				<form >
-					<div th:each="post : ${postlist}">
+			
+					<div th:each="post,list : ${posts}" th:if="${list.count<=5}">
 						<div class="num" >
 						 <p th:text="${post.post_no}"></p>
 						</div>
 						<div class="title" >
 							<a href="/boardView" th:text="${post.post_title}"></a>
 						</div>
-						<div class="writer"></div>
+						<div class="writer">원두쓰리포</div>
 						<div class="date" th:text="${post.post_date}"></div>
 						<div class="count" th:text="${post.post_view}"></div>
 					</div>
-				</form>
+					
+				
+					
+					
+		
 
-				<!--  	<div>
+				  	<!--  <div>
 						<div class="num">번호</div>
 						<div class="title">
 							<a href="/boardView">제목</a>
@@ -96,7 +100,7 @@
 
 
 			<div class="bt_wrap">
-				<a href="/boardwriter" class="on">등록</a>
+				<a href="/boardWrite" class="on">등록</a>
 				<!--  <a href="#">수정</a>-->
 			</div>
 			
