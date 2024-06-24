@@ -16,4 +16,5 @@ public class MyInfoService {
 	public List<MyInfo> getAllmember(){
 		return myinfoMapper.getAllmember();
 	}
+
 }
