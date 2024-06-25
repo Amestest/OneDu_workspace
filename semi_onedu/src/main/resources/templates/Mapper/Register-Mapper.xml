@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ondumall.mapper.RegisterMapper">
+	<insert id="insertRegister" parameterType="com.onedumall.dto.Members">
+	INSERT INTO members( MEMBERS_NO,MEMBERS_ID,MEMBERS_PW,MEMBERS_NAME,MEMBERS_EMAIL,MEMBERS_ADDRESS,MEMBERS_PHONE,MEMBERS_BIRTH)
+	VALUES (member_seq.NEXTVAL, #{MEMBERS_NO},#{MEMBERS_ID},#{MEMBERS_PW},#{MEMBERS_NAME},#{MEMBERS_EMAIL},#{MEMBERS_ADDRESS},#{MEMBERS_PHONE},#{MEMBERS_BIRTH})
+	
+	</insert>
+
+
+</mapper>

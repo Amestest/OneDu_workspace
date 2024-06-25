@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <link rel="stylesheet" href="semi_main.css" />
+    <link rel="stylesheet" href="/css/main.css" />
    
   </head>
   <body>
     
     <div>
       <header>
-        <div class="icon"><a href="#">회원가입</a> <a href="#">로그인</a></div>
-        <h1><a href="#">원두쓰리포</a></h1>
+        <div class="icon"><a href="/register">회원가입</a> <a href="#">로그인</a></div>
+        <h1><a href="/main">원두쓰리포</a></h1>
         <div class="search-box" method="get">
           <input
             class="search-txt"
@@ -36,7 +36,7 @@
       </header>
     </div>
     <div class="menubar">
-      <a href>홈</a>
+      <a href="/main">홈</a>
       <a href>원두취향테스트</a>
       <a href>마이페이지</a>
       <a href>공지사항</a>
@@ -44,16 +44,16 @@
     </div>
     <div class="slider">
       <div class="slide">
-        <img src="../원두사진/원두+커피잔.jpg" alt="banner1" />
+        <img src="../image/원두+커피잔.jpg" alt="banner1" />
       </div>
       <div class="slide">
-        <img src="../원두사진/원두+그라인더+컵.jpg" alt="banner2" />
+        <img src="../image/원두+그라인더+컵.jpg" alt="banner2" />
       </div>
       <div class="slide">
-        <img src="../원두사진/원두사진1.jpg" alt="banner3" />
+        <img src="../image/원두사진1.jpg" alt="banner3" />
       </div>
       <div class="slide">
-        <img src="../원두사진/원두사진2.jpg" alt="banner4" />
+        <img src="../image/원두사진2.jpg" alt="banner4" />
       </div>
     </div>
     <script src="script.js"></script>
@@ -84,28 +84,28 @@
     </script>
     <div class="메인">
       <div class="제품사진">
-        <img src="../원두사진/커피콩+봉투+컵.jpg" alt="제품이미지" />
+        <img src="../image/커피콩+봉투+컵.jpg" alt="제품이미지" />
         <h3>에티오피아 원두</h3>
         <p>￦9,900</p>
         <button onclick="버튼클릭()">장바구니 추가</button>
         <button onclick="버튼클릭()">위시리스트 추가</button>
       </div>
       <div class="제품사진">
-        <img src="../원두사진/커피 멋진말.jpg" alt="제품이미지">
+        <img src="../image/커피 멋진말.jpg" alt="제품이미지">
         <h3>케냐 원두</h3>
         <p>￦9,900</p>
         <button onclick="버튼클릭()">장바구니 추가</button>
         <button onclick="버튼클릭()">위시리스트 추가</button>
       </div>
       <div class="제품사진">
-        <img src="../원두사진/커피콩+봉투+컵.jpg" alt="제품이미지">
+        <img src="../image/커피콩+봉투+컵.jpg" alt="제품이미지">
         <h3>베트남 원두</h3>
         <p>￦9,900</p>
         <button onclick="버튼클릭()">장바구니 추가</button>
         <button onclick="버튼클릭()">위시리스트 추가</button>
       </div>
       <div class="제품사진">
-        <img src="../원두사진/칸타타봉투.jpg" alt="제품이미지">
+        <img src="../image/칸타타봉투.jpg" alt="제품이미지">
         <h3>콜롬비아 원두</h3>
         <p>￦9,900</p>
         <button onclick="버튼클릭()">장바구니 추가</button>
@@ -116,7 +116,7 @@
       <div class="footer-container">
         <footer class="footer">
           <ul>
-            <a href="#">홈</a>
+            <a href="/main">홈</a>
             <a href="#">원두취향테스트</a>
             <a href="#">마이페이지</a>
             <a href="#">공지사항</a>
