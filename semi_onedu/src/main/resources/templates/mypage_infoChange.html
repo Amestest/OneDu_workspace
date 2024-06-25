@@ -64,28 +64,36 @@
       <div class="container">
         <h1><strong>회원 정보 수정</strong></h1>
         <img src="image/user (2).png" />
-        <form class="content">
+        <form th:action="@{modifyProfile}" th:object="${member}" class="content">
           <label>이름 :</label>
-          <input type="text" ><!--th:field=${m.members_name}  -->
+          <p th:text="${member.members_name}"></p>
 
           <label>생년월일 :</label>
-          <input type="text">
+          <p th:text="${member.members_birth}"></p>
 
           <label>이메일 :</label>
-          <input type="email">
+         <p th:text="${member.members_email}"></p>
 
           <label>휴대폰 번호 :</label>
-          <input type="text">
+          <p th:text="${member.members_phone}"></p>
 
           <label>주소 :</label>
-          <input type="text">
+          <p th:text="${member.members_address}"></p>
           
           <br><br>
 
-          <button class="info_check">완료</button>
-          <button class="info_cancle">취소</button>
-        </form>
-      </div>
+          
+        <button type="submit" class="info_check">수정하기</button>
+        <button type="button" class="info_cancel" onclick="cancelUpdate()">취소하기</button>
+    	</form>
+	</div>
+
+	<script>
+	    function cancelUpdate() {
+	        alert('수정이 취소되었습니다.');
+	        // 취소 버튼 클릭 시 필요한 작업을 추가할 수 있습니다.
+	    }
+	</script>
     
 
     <!--footer-->

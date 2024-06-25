@@ -1,103 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <style>
-       body {
-        margin: auto;
-        padding: 30px;
-        background-color: #f7ecde;
-      }
-      .container form {
-            display: flex;
-            flex-direction: column;
-        }
-        .container h1{
-          margin: 10px;
-          padding: 10px;
-        }
-        .withdraw {
-          margin-top: 30px;
-        }
-      /* 제출 버튼 */
-      .out-button {
-        width: 50%;
-        padding: 10px;
-        margin: 50px 0;
-        border: none;
-        font-size: 20px;
-        border-radius: 5px;
-      }
-      .out-button:hover{
-        background-color: #54bab9;
-      }
-      .content {
-        background-color: white;
-        width: 600pxpx;
-        margin: 20px;
-        padding: 50px;
-        border-radius: 10px;
-      }
-      .content input {
-        margin: 10px;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-      }
-      /* form태그 */
-      form {
-       display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-top: 30px;
-      }
+<html xmlns:th="http://www.thyemleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<style>
+body {
+	margin: auto;
+	padding: 30px;
+	background-color: #f7ecde;
+}
 
-      /* 회원 탈퇴 약관 */
-      .terms {
-        width: 500px;
-        height: 300px;
-        border: 1px solid black;
-        overflow: auto;
-        /* 내용이 요소를 벗어나는 경우 방향에 맞춰서 자동으로 스크롤 추가 */
-        font-family: sans-serif; /* 돋움체 */
-        font-size: 14px;
-      }
-      .footer {
-        background-color: #e9dac1;
-        margin: 10px;
-        padding: 10px;
-      }
-    </style>
-    <script>
-      function withdrawbtn(){
-        
-        alert("회원탈퇴가 완료되었습니다.")
-      }
+.container form {
+	display: flex;
+	flex-direction: column;
+}
 
-    </script>
-  </head>
-  <body>
-    <div class="container">
-      <h1><strong>회원 탈퇴</strong></h1>
-      <form class="content">
-        <div class="myPage-row">
-          <label>비밀번호 :</label>
-          <input type="password" name="memberPw" id="memberPw" maxlength="30" />
-        </div>
+.container h1 {
+	margin: 10px;
+	padding: 10px;
+}
 
-        <span>
-            현재 비밀번호가 일치하는 경우 탈퇴할 수 있습니다.
-        </span>
+.withdraw {
+	margin-top: 30px;
+}
+/* 제출 버튼 */
+.out-button {
+	width: 50%;
+	padding: 10px;
+	margin: 50px 0;
+	border: none;
+	font-size: 20px;
+	border-radius: 5px;
+	align-items: center;
+}
 
-        <div class="withdraw">
-          <label>회원 탈퇴 약관</label>
-        </div>
+.out-button:hover {
+	background-color: #54bab9;
+}
 
-        <pre class="terms">
+.content {
+	background-color: white;
+	width: 600pxpx;
+	margin: 20px;
+	padding: 50px;
+	border-radius: 10px;
+}
+
+.content input {
+	margin: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+/* form태그 */
+form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 30px;
+}
+
+/* 회원 탈퇴 약관 */
+.terms {
+	width: 500px;
+	height: 300px;
+	border: 1px solid black;
+	overflow: auto;
+	/* 내용이 요소를 벗어나는 경우 방향에 맞춰서 자동으로 스크롤 추가 */
+	font-family: sans-serif; /* 돋움체 */
+	font-size: 14px;
+}
+
+.footer {
+	background-color: #e9dac1;
+	margin: 10px;
+	padding: 10px;
+}
+</style>
+<script>
+	function withdrawbtn() {
+
+		alert("회원탈퇴가 완료되었습니다.")
+	}
+</script>
+</head>
+<body>
+	<div class="container">
+		<h1>
+			<strong>회원 탈퇴</strong>
+		</h1>
+		<form class="content">
+			<!--  <div class="myPage-row">
+				<label>비밀번호 :</label> <input type="password" name="memberPw"
+					id="memberPw" maxlength="30">
+			</div>
+
+			<span> 현재 비밀번호가 일치하는 경우 탈퇴할 수 있습니다. </span>-->
+
+			<div class="withdraw">
+				<label>회원 탈퇴 약관</label>
+			</div>
+
+			<pre class="terms">
 제1조
 이 약관은 샘플 약관입니다.
 
@@ -123,23 +130,32 @@
 
             </pre>
 
-        <div>
-          <input type="checkbox" name="agree" id="agree" />
-          <label for="agree">위 약관에 동의합니다.</label>
-        </div>
+			<div>
+				<input type="checkbox" name="agree" id="agree" /> <label
+					for="agree">위 약관에 동의합니다.</label>
+			</div>
 
-        <button class="out-button" onclick="withdrawbtn()">탈퇴하기</button>
-      </form>
-    </div>
+			<!-- <button th:action="@{/deleteMember}" method="get" class="out-button" onclick="withdrawbtn()">탈퇴하기</button> -->
 
-    <!--footer-->
-    <footer class="footer mt-5">
-      <div class="container text-center">
-        <p>&copy; 2024 브랜드명.All Right Reserved.</p>
-        <p>개인정보처리방침 | 이용약관</p>
-      </div>
-    </footer>
+		</form>
+		
+		
+		<form th:action="@{/deleteMember}" method="get">
+				<button class="out-button" onclick="withdrawbtn()">계정 삭제하기</button>
+		</form>
 
-   
-  </body>
+	</div>
+
+	
+	
+	<!--footer-->
+	<footer class="footer mt-5">
+		<div class="container text-center">
+			<p>&copy; 2024 브랜드명.All Right Reserved.</p>
+			<p>개인정보처리방침 | 이용약관</p>
+		</div>
+	</footer>
+
+
+</body>
 </html>
