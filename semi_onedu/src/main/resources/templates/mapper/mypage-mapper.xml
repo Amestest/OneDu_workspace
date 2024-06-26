@@ -14,12 +14,17 @@
 	
 	</select>
 
-	<select id="getAllmember" resultType="com.onedumall.dto.Members">
 	
-		SELECT members_name, members_email, members_address, members_phone, members_birth
-	 	FROM members
+	<update id="updateMember" parameterType="com.onedumall.dto.Members">
+		UPDATE members
+		SET members_name = #{members_name},
+			members_birth = #{members_birth},
+			members_email = #{members_email},
+			members_phone = #{members_phone},
+			members_address = #{members_address}
+		WHERE members_id = #{members_id}
+	</update>
 	
-	</select>
 	
 	<delete id="deleteMember" parameterType="String">
 		DELETE FROM members

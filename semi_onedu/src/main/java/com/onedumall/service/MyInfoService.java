@@ -23,6 +23,11 @@ public class MyInfoService {
 		return myinfoMapper.getAllmember();
 	}
 	
+	//개인정보 변경
+	public void updateMember(Members members) {  
+		myinfoMapper.updateMember(members);
+	}
+	
 	//회원 탈퇴
 	public void deleteMember(String members_id) {
 		myinfoMapper.deleteMember(members_id);

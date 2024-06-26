@@ -32,19 +32,25 @@ body {
 	margin-bottom: 30px;
 }
 
-button {
-	margin: 20px;
-	padding: 20px;
+a {
 	border-radius: 5px;
 	border: none;
+	display : block;
+	width: 80%;
+	margin:20px auto;
+	padding:20px;
+	font-weight: bold;
+	border : none;
+	border-radius : 5px;
+	background-color:#ccc;
+	color:black;
+	cursor:pointer;
+	text-decoration:none;
+	text-align: center;
+	
 }
 
-button a {
-	text-decoration: none;
-	color: black;
-}
-
-button:hover {
+a:hover {
 	background-color: #54bab9;
 }
 
@@ -62,11 +68,7 @@ button:hover {
 			<img src="image/user (2).png" alt="user-icon">
 			
 				<a href="/info">내정보</a>
-			
-				<a href="/infoChange">개인정보 변경</a>
-			
 				<a href="/pwChange">비밀번호 변경</a>
-			
 				<a href="/userDelete">회원 탈퇴</a>
 			
 		</form>

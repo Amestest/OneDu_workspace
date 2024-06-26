@@ -27,12 +27,19 @@ public class MypageMainController {
 		return "login";
 	}
 
+
+	@GetMapping("/mypage_home")
+	public String MypageHome(HttpSession session, Model model) {
+		return "mypage_home";
+	}
+	
+	
 	@PostMapping("/login")
 	public String getLogin(Model model, @RequestParam("members_id") String members_id,
 			@RequestParam("members_pw") String members_pw, HttpSession session) {
 
 		Members members = myinfoService.getLogin(members_id, members_pw);
-		System.out.println("member  : " + members);
+		
 		if (members != null) { // member 객체에 값이 들어있다면!
 			session.setAttribute("loginSession", members);
 			return "mypage_home"; // 로그인 성공하면 메인 페이지로 보내기
@@ -43,36 +50,65 @@ public class MypageMainController {
 		}
 	}
 
+	
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();// invalidate 무효시키다. 없던일로만들다.
 		return "redirect:/";
 	}
 
-	@GetMapping("/mypage_home")
-	public String MypageHome(HttpSession session, Model model) {
-
-		return "mypage_home";
-	}
+	/* ********************************************************************** */
 
 	@GetMapping("/info")
-	public String getAllmember(Model model) {
-		List<Members> infoList = myinfoService.getAllmember();
-		log.info("infoList : " + infoList);
-		model.addAttribute("infoList", infoList);
+	public String mypageInfo(HttpSession session, Model model) {
+		Members members = (Members) session.getAttribute("loginSession");
+		
+		if (members == null) {
+			return "redirect:/login";
+		}
+		model.addAttribute("members",members);
 		return "mypage_info";
+
+	}
+	
+	//마이페이지 불러오고 수정하는 GET POST
+	@GetMapping("/mypage_infoModify")
+	public String infoModify(HttpSession session, Model model) {
+		Members members = (Members) session.getAttribute("loginSession");
+		log.info("controller  member update : "+members);
+		if(members == null) {
+			return "redirect:/login";
+		}
+		
+		model.addAttribute("members",members);
+		return "mypage_infoModify";
 	}
 
-	@GetMapping("/infoChange")
-	public String MyChangeInfo(Model model) {
-		return "mypage_infoChange";
+	
+	@PostMapping("/mypage_infoModify")
+	public String updateMember (HttpSession session, Members updateMember) {
+		
+		Members members = (Members) session.getAttribute("loginSession");
+				
+		if(members == null) {
+			return "redirect:/login";
+		}
+		
+		updateMember.setMembers_id(members.getMembers_id());
+		myinfoService.updateMember(updateMember); //기존내용에서 새로운내용 덮어쓰기
+		session.setAttribute("loginSession", updateMember);
+		return "redirect:/mypage_info";
 	}
-
+	
+	/* ********************************************************************** */
+	
 	@GetMapping("/pwChange")
 	public String MyPwChange(Model model) {
 		return "mypage_pwChange";
 	}
-
+	
+	
+	/* ********************************************************************** */
 	@GetMapping("/userDelete")
 	public String MyUserDelete(Model model) {
 		return "mypage_userDelete";

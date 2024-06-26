@@ -15,6 +15,9 @@ public interface MyinfoMapper {
 	//회원 탈퇴하기
 	void deleteMember (@Param("members_id") String members_id);
 	
+	//개인정보 변경
+	void updateMember(Members members);
+	
 	//로그인
 	Members getLogin(@Param("members_id") String members_id, @Param("members_pw") String members_pw);
 	

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +9,7 @@
 	rel="stylesheet"
 	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
 	crossorigin="anonymous" />
+
 <style>
 body {
 	margin: auto;
@@ -16,15 +17,10 @@ body {
 	background-color: #f7ecde;
 }
 
-.container {
-	display: flex;
-	flex-direction: column;
-}
-
 .container img {
 	width: 100px;
 	display: flex;
-	margin: 20px auto;
+	margin: 10px auto;
 }
 
 .container h1 {
@@ -38,26 +34,19 @@ body {
 	border-radius: 10px;
 }
 
-.content input {
-	margin: 5px;
+.content h5 {
 	padding: 10px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
+	font-weight: bold;
 }
 
 button {
-	margin: 5px;
 	padding: 10px;
 	border-radius: 5px;
 	border: none;
 }
 
-.info_check:hover {
+button:hover {
 	background-color: #54bab9;
-}
-
-.info_cancle:hover {
-	background-color: rgb(245, 112, 112);
 }
 
 .footer {
@@ -68,87 +57,53 @@ button {
 </style>
 </head>
 <body>
-<!--
+
 	<div class="container">
-		<form class="content">
-			<h1>
-				<strong>회원 정보</strong>
-			</h1>
-			<img src="image/user (2).png" /> 이름 :
-			<p type="text" th:field="${members_name}"></p>
-
-			생년월일 :
-			<p type="text" th:field="${members_birth}"></p>
-
-			이메일 :
-			<p type="text" th:field="${members_email}"></p>
-
-			휴대폰 번호 :
-			<p type="text" th:field="${members_phone}"></p>
-
-			주소 :
-			<p type="text" th:field="${members_address}"></p>
-
-			<br> <br>
-		
-		<a th:href="@{/mypage_infoModify}">마이페이지 수정하기</a>
-		<button type="button" class="info_cancel" onclick="cancelUpdate()">취소하기</button>
-</form>
-
-
-	</div>
-  -->
-  <div class="container">
 		<h1>
 			<strong>회원 정보</strong>
 		</h1>
-		<form th:action="@{mypage_infoModify}" th:object="${members}" method="post">
+		<form th:action="@{/mypage_infoModify}" method="post" th:object="${members}">
 			<img src="image/user (2).png" />
 			<div class="content">
 
 				<div>
 					<h6>이름</h6>
-					<h5 th:text="*{members_name}"></h5>
+					<input type="text" th:field="*{members_name}"><br>
 					<hr>
 				</div>
 
 				<div>
 					<h6>생년월일</h6>
-					<h5 th:text="*{members_birth}"></h5>
+					<input type="number" th:field="*{members_birth}"><br>
 					<hr>
 				</div>
 
 				<div>
 					<h6>이메일</h6>
-					<h5 th:text="*{members_email}"></h5>
+					<input type="text" th:field="*{members_email}"><br>
 					<hr>
 				</div>
 
 				<div>
 					<h6>휴대폰 번호</h6>
-					<h5 th:text="*{members_phone}"></h5>
+					<input type="text" th:field="*{members_phone}"><br>
 					<hr>
 				</div>
 
 				<div>
 					<h6>주소</h6>
-					<h5 th:text="*{members_address}"></h5>
+					<input type="text" th:field="*{members_address}"><br>
 					<hr>
 				</div>
 
-				<a th:href="@{/mypage_infoModify}">수정하기</a>
-				<button class="info_check">확인</button>
-				<!--  button = button submit reset  -->
+				<button>수정하기</button>
+				<button class="info_check" type="button">확인</button>
+
+
 			</div>
 		</form>
 
 	</div>
-  
-	<script>
-		function cancelUpdate() {
-			alert('수정이 취소되었습니다.');
-		}
-	</script>
 
 
 	<!--footer-->
