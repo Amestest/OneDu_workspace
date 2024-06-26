@@ -13,11 +13,13 @@
         <div class="icon"><a href="/register">회원가입</a> <a href="#">로그인</a></div>
         <h1><a href="/main">원두쓰리포</a></h1>
         <div class="search-box" method="get">
+          <form th:action="@{/main}" method="post">
           <input
             class="search-txt"
             type="text"
+            name="keyword"
             placeholder="검색어를 입력하세요"
-          />
+          required/>
           <button class="search-btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -32,6 +34,7 @@
               />
             </svg>
           </button>
+          </form>
         </div>
       </header>
     </div>
@@ -41,6 +44,14 @@
       <a href>마이페이지</a>
       <a href>공지사항</a>
       <a href>QnA</a>
+    </div>
+    <div th:if="${result}">
+    <h2> 검색결과</h2>
+    	<ul>
+    		<li th:each = "product:${result}">
+    			<p>제품명: <span th:text="${product.product_name}"></span></p>
+    		</li>
+    	</ul>
     </div>
     <div class="slider">
       <div class="slide">

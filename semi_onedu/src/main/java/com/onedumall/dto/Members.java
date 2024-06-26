@@ -1,6 +1,10 @@
 package com.onedumall.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -8,12 +12,12 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class Members {
-	private int member_no;
-	private String member_id;
-	private String member_pw;
-	private String member_name;
-	private String member_email;
-	private String member_address;
-	private String member_phone;
-	private int member_birth;
+	private int members_no;
+	private String members_id;
+	private String members_pw;
+	private String members_name;
+	private String members_email;
+	private String members_address;
+	private String members_phone;
+	private int members_birth;
 }

@@ -9,8 +9,26 @@ body{
 header {
   text-align: center;
 }
+a{
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: none;
+  color: #3f2508;
+}
 .icon {
   text-align: right;
+}
+.icon a {
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: none;
+  color: #3f2508;
+}
+.search-box{
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
 }
 .menubar {
   text-align: center;
@@ -34,6 +52,9 @@ header {
   padding: 20px;
   width: 300px;
   margin: 0 auto;
+}
+.search-btn{
+  margin-bottom: 12px;
 }
 .commit{
   width: 300px;
@@ -85,4 +106,18 @@ button {
     width: 100%;
     bottom: 0;
    
+  }
+  
+  .footer-container{
+    display: inherit;
+  
+  }
+  .footer ul{
+    display: inherit;
+    
+  }
+  .footer a{
+    margin: 20px;
+    text-decoration: none;
+    color: #3f2508   
   }

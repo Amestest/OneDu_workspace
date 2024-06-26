@@ -29,14 +29,14 @@
                     }
                 });
             });
-            function registerbutton(){
+            function registerbutton(event){
                 const pw1 = $("#pw1").val();
                 const pw2 = $("#pw2").val();
                 if(pw1 !== pw2){
                     alert("비밀번호가 일치하지 않습니다.");
                     event.preventDefault();
                 }
-            }
+            
          const pwval = document.getElementById("pw1") ;
          const pwvalcheck = document.getElementById("pw2");
          function checkpw(){
@@ -48,14 +48,15 @@
           } else {
             alert("비밀번호가 일치하지 않습니다.");
           }
-        }        
+        } 
+      }       
         </script>
     </head>
     <body>  
         <div>
             <header>
               <div class="icon"><a href>회원가입</a>  <a href>로그인</a></div>
-              <h1>원두쓰리포</h1>
+              <h1><a href="#">원두쓰리포</a></h1>
               <div class="search-box" method="get">
                 <input
                   class="search-txt"
@@ -97,7 +98,7 @@
         <br>
         <label>비밀번호확인</label>
         <input type="password" id="pw2" required>
-        <button onclick="비밀번호일치여부()">비밀번호 일치확인</button>
+        <button onclick="registerbutton()">비밀번호 일치확인</button>
         <br>
         <label>이름</label>
         <input type ="text" name="signName">
@@ -118,9 +119,18 @@
         <button type="submit" class="commit" onclick="registerbutton(event)">회원가입완료</button>
         </form>
     
-    <footer>
-        <p>&copy; 2024 원두쓰리포 쇼핑몰 All right resverd</p>
-    </footer>
+        <div class="footer-container">
+          <footer class="footer">
+            <ul>
+              <a href="#">홈</a>
+              <a href="#">원두취향테스트</a>
+              <a href="#">마이페이지</a>
+              <a href="#">공지사항</a>
+              <a href="#">QnA</a>
+            </ul>
+            <p>&copy; 2024 원두쓰리포 쇼핑몰 All right resverd</p>
+          </footer>
+        </div>
     </body>
     
 </html>

@@ -9,16 +9,40 @@ body{
 header {
   text-align: center;
 }
+a{
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: none;
+  color: #3f2508;
+}
 .icon {
   text-align: right;
+}
+.icon a {
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: none;
+  color: #3f2508;
+}
+.search-box{
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
 }
 .menubar {
   text-align: center;
   background-color: #E9DAC1; 
   padding : 10px ;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  
 }
 .menubar a {
   margin-right: 25px;
+  text-decoration: none;
+  color: #3f2508;
 }
 .container{
     margin: auto;
@@ -29,8 +53,11 @@ header {
   width: 300px;
   margin: 0 auto;
 }
+.search-btn{
+  margin-bottom: 12px;
+}
 
-form{
+.register-form{
     background-color:  #E9DAC1;
     margin: 0 auto;
     padding: 20px;
@@ -59,6 +86,11 @@ button {
   button:hover{
     background-color: #54BAB9;
   }
+  .commit{
+  width: 300px;
+  margin: 0 auto;
+  
+}
   input {
     width: 100%;
     padding:8px;
@@ -75,4 +107,18 @@ button {
     width: 100%;
     bottom: 0;
    
+  }
+  
+  .footer-container{
+    display: inherit;
+  
+  }
+  .footer ul{
+    display: inherit;
+    
+  }
+  .footer a{
+    margin: 20px;
+    text-decoration: none;
+    color: #3f2508   
   }

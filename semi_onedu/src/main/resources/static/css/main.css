@@ -54,7 +54,7 @@ a{
   margin: 0 auto;
   
 }
-form{
+/*form{
     background-color:  #E9DAC1;
     margin: 0 auto;
     padding: 20px;
@@ -62,7 +62,7 @@ form{
     box-shadow: 0 0 10px white;
     width: 300px;
     margin-top: 50px;
-}
+}*/
 .container h1{
     padding: 10px;
     display: flex;
