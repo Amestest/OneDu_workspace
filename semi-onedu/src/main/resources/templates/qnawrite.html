@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>공지사항</title>
+<title>QnA</title>
 <link rel="stylesheet" href="/css/boardwrite-view-edit.css" />
 </head>
 <body>
 	<div class="board_wrap">
 		<div class="board_title">
-			<strong>공지사항</strong>
+			<strong>QnA</strong>
 		</div>
 
 		<div class="board_wirte_wrap">
 			<!--  form submit 등록 -> DB  -->
-			<form th:action="@{/boardWrite}" method="post">
+			<form th:action="@{/qnaWrite}" method="post">
 				<div class="board_write">
 					<div class="title">
 						<dl>
 							<dt>제목</dt>
 							<dd>
-								<input type="text" th:field="${post.post_title}"
+								<input type="text" th:field="${post.question_title}"
 									placeholder="제목 입력" />
 							</dd>
 						</dl>
@@ -35,11 +35,11 @@
 					</div>
 
 					<div class="cont">
-						<textarea th:field="${post.post_info}" placeholder="내용 입력"></textarea>
+						<textarea th:field="${post.question_info}" placeholder="내용 입력"></textarea>
 					</div>
 
 					<div class="bt_wrap">
-						<button style="width: 104px; height: 100;">등록</button>
+						<button>등록</button>
 						<!--    <button class="on">등록</button> -->
 						<a href="/">취소</a>
 						<!--   <a href="/boardList">취소</a>   / 취소로 된부분을 40번째 줄 코드로 변경한다.  -->
@@ -51,7 +51,7 @@
 		</div>
 
 	</div>
-	
+
 		<div class="footer-container">
         <footer class="footer">
           <ul>

@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항</title>
+    <title>QnA</title>
     <link rel="stylesheet" href="/css/boardwrite-view-edit.css">
 </head>
 <body>
     <div class="board_wrap">
         <div class="board_title">
-            <strong>공지사항</strong>
+            <strong>QnA</strong>
             
         </div>
         <div class="board_view_wrap">
             <div class="board_view">
-                <div class="title" th:text="${post.post_title}">
+                <div class="title" th:text="${post.question_title}">
                    <!-- 글제목이 들어갑니다 -->
                 </div>
                 <div class="info">
                     <dl>
                         <dt>글 번호</dt>
-                        <dd th:text="${post.post_no}"></dd>
+                        <dd th:text="${post.question_no}"></dd>
                     </dl>
                     <dl>
                         <dt>글쓴이</dt>
@@ -28,14 +28,14 @@
                     </dl>
                     <dl>
                         <dt>작성일</dt>
-                        <dd th:text="${post.post_date_str}"></dd>
+                        <dd th:text="${post.question_date_str}"></dd>
                     </dl>
                     <dl>
                         <dt>조회</dt>
-                        <dd th:text="${post.post_view}"></dd>
+                        <dd th:text="${post.question_view}"></dd>
                     </dl>
                 </div>
-                <div class="cont" th:text="${post.post_info}">
+                <div class="cont" th:text="${post.question_info}">
                     <!--  글 내용이 들어갑니다<br>
                     글 내용이 들어갑니다<br>
                     글 내용이 들어갑니다<br>
@@ -48,8 +48,8 @@
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="/" >목록</a>
-                <a th:href="@{/boardEdit/{post_no}(post_no=${post.post_no})}" class="edit-button">수정</a>
+                <a href="/" class="on">목록</a>
+                <a th:href="@{/qnaEdit/{question_no}(question_no=${post.question_no})}" class="edit-button">수정</a>
             </div>
         </div>
     </div>
@@ -66,5 +66,6 @@
           <p>&copy; 2024 원두쓰리포 쇼핑몰 All right resverd</p>
         </footer>
       </div>
+    
 </body>
 </html>

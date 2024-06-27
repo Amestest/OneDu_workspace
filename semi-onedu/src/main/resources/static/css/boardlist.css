@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: #F7ECDE;
 }
 
 html {
@@ -95,10 +96,13 @@ a {
 .board_list .title {
     width: 60%;
     text-align: left;
+    
 }
 
 .board_list .top .title {
     text-align: center;
+
+    
 }
 
 .board_list .writer {
@@ -149,4 +153,38 @@ a {
 
 .board_page a:first-child {
     border-left: 1px solid #ddd;
+}
+
+.board_wrap {
+	width: 1000px;
+	margin: 100px auto;
+	margin-bottom: 290px;
+}
+
+footer{
+   background-color: #F7ECDE;
+   color: black;
+   text-align: center;
+   padding: 10px;
+   width: 100%;
+   bottom: 0;
+   font-size: 1.6rem;
+   
+  }
+
+.footer-container{
+  display: inherit;
+
+}
+.footer ul{
+  display: inherit;
+  
+}
+.footer a{
+  margin: 20px;
+  text-decoration: none;
+  color: #3f2508   
+}
+.search-btn{
+  margin-bottom: 12px;
 }
