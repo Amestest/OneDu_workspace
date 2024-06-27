@@ -45,19 +45,22 @@ body {
 	border: 1px solid #ccc;
 }
 
-button {
+a {
+	background-color: #54bab9;
 	margin: 5px;
 	padding: 10px;
 	border-radius: 5px;
 	border: none;
+	background-color:#ccc;
+	text-decoration:none;
+	color:black;
 }
 
-.info_check:hover {
+.modify-btn:hover{
+	background-color: lightpink;
+}
+a:hover {
 	background-color: #54bab9;
-}
-
-.info_cancle:hover {
-	background-color: rgb(245, 112, 112);
 }
 
 .footer {
@@ -108,7 +111,7 @@ button {
 					<hr>
 				</div>
 
-				<a th:href="@{/mypage_infoModify}">수정하기</a>
+				<a th:href="@{/mypage_infoModify}" class="modify-btn">수정하기</a>
 				<a th:href="@{/mypage_home}" id="confirmButton">확인하기</a>
 				<!--  button = button submit reset  -->
 			</form>

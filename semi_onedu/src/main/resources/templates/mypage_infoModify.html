@@ -33,22 +33,40 @@ body {
 	padding: 30px;
 	border-radius: 10px;
 }
-
-.content h5 {
-	padding: 10px;
+.content input{
+  padding:10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.content h6 {
+	
 	font-weight: bold;
 }
 
 button {
+	background-color:#ccc;
+	margin-top:30px;
 	padding: 10px;
 	border-radius: 5px;
 	border: none;
 }
 
+a {
+	margin: 5px;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background-color:#ccc;
+	text-decoration:none;
+	color:black;
+}
+
 button:hover {
 	background-color: #54bab9;
 }
-
+a:hover{
+	background-color: lightpink;
+}
 .footer {
 	background-color: #e9dac1;
 	margin: 10px;
@@ -93,11 +111,11 @@ button:hover {
 				<div>
 					<h6>주소</h6>
 					<input type="text" th:field="*{members_address}"><br>
-					<hr>
+					
 				</div>
 
 				<button>수정하기</button>
-				<button class="info_check" type="button">취소하기</button>
+				<a th:href="@{/mypage_home}" id="confirmButton">취소하기</a>
 
 
 			</div>

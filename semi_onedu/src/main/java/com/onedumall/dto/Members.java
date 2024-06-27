@@ -15,6 +15,6 @@ public class Members {
 	private String members_email;
 	private String members_address; 
 	private String members_phone;
-	private int members_birth;
+	private String members_birth;
 
 }
