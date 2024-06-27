@@ -27,19 +27,17 @@ public class MypageMainController {
 		return "login";
 	}
 
-
 	@GetMapping("/mypage_home")
 	public String MypageHome(HttpSession session, Model model) {
 		return "mypage_home";
 	}
-	
-	
+
 	@PostMapping("/login")
 	public String getLogin(Model model, @RequestParam("members_id") String members_id,
 			@RequestParam("members_pw") String members_pw, HttpSession session) {
 
 		Members members = myinfoService.getLogin(members_id, members_pw);
-		
+
 		if (members != null) { // member 객체에 값이 들어있다면!
 			session.setAttribute("loginSession", members);
 			return "mypage_home"; // 로그인 성공하면 메인 페이지로 보내기
@@ -50,7 +48,6 @@ public class MypageMainController {
 		}
 	}
 
-	
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();// invalidate 무효시키다. 없던일로만들다.
@@ -62,72 +59,93 @@ public class MypageMainController {
 	@GetMapping("/info")
 	public String mypageInfo(HttpSession session, Model model) {
 		Members members = (Members) session.getAttribute("loginSession");
-		
+
 		if (members == null) {
 			return "redirect:/login";
 		}
-		model.addAttribute("members",members);
+		model.addAttribute("members", members);
 		return "mypage_info";
 
 	}
-	
-	//마이페이지 불러오고 수정하는 GET POST
+
+	// 마이페이지 불러오고 수정하는 GET POST
 	@GetMapping("/mypage_infoModify")
 	public String infoModify(HttpSession session, Model model) {
 		Members members = (Members) session.getAttribute("loginSession");
-		log.info("controller  member update : "+members);
-		if(members == null) {
+		log.info("controller  member update : " + members);
+		if (members == null) {
 			return "redirect:/login";
 		}
-		
-		model.addAttribute("members",members);
+
+		model.addAttribute("members", members);
 		return "mypage_infoModify";
 	}
 
-	
 	@PostMapping("/mypage_infoModify")
-	public String updateMember (HttpSession session, Members updateMember) {
-		
+	public String updateMember(HttpSession session, Members updateMember) {
+
 		Members members = (Members) session.getAttribute("loginSession");
-				
-		if(members == null) {
+
+		if (members == null) {
 			return "redirect:/login";
 		}
-		
+
 		updateMember.setMembers_id(members.getMembers_id());
-		myinfoService.updateMember(updateMember); //기존내용에서 새로운내용 덮어쓰기
+		myinfoService.updateMember(updateMember); // 기존내용에서 새로운내용 덮어쓰기
 		session.setAttribute("loginSession", updateMember);
-		return "redirect:/mypage_info";
+		return "redirect:/info";
 	}
-	
+
 	/* ********************************************************************** */
-	
+
 	@GetMapping("/pwChange")
 	public String MyPwChange(Model model) {
 		return "mypage_pwChange";
 	}
 	
-	
+	@PostMapping("/pwChange")
+	public String pwChange(HttpSession session,
+	                       @RequestParam("newPassword") String newPassword,
+	                       Model model) {
+
+	    Members members = (Members) session.getAttribute("loginSession");
+
+	    if (members == null) {
+	        return "redirect:/login";
+	    }
+	 // 비밀번호 변경 처리
+	    members.setMembers_pw(newPassword);
+	    myinfoService.pwChange(members); // 비밀번호 변경 메소드 호출
+
+	    // 세션에 변경된 회원 정보 저장
+	    session.setAttribute("loginSession", members);
+
+	    return "redirect:/mypage_home";
+	}
+
+
+
 	/* ********************************************************************** */
 	@GetMapping("/userDelete")
 	public String MyUserDelete(Model model) {
 		return "mypage_userDelete";
 	}
-	
+
 	@GetMapping("/deleteMember")
-	public String deleteMember(HttpSession session ) {
-		//현재 로그인이된 세션의 정보를 가지고 와서 멤버정보 조회하는 코드
+	public String deleteMember(HttpSession session) {
+		// 현재 로그인이된 세션의 정보를 가지고 와서 멤버정보 조회하는 코드
 		Members member = (Members) session.getAttribute("loginSession");
-						
-		//만약에 로그인이 되어있지 않은데 접촉하려한다. 그러면 바로 홈페이지로 돌려보내자
-		if(member == null) {
+
+		log.info("controller delete: " + member);
+		// 만약에 로그인이 되어있지 않은데 접촉하려한다. 그러면 바로 홈페이지로 돌려보내자
+		if (member == null) {
 			return "redirect:/login";
-			}
-		
-		myinfoService.deleteMember(member.getMembers_id());//session에 저장된 member_id를 가져오겠다
-		session.invalidate();//삭제후 로그인 없던일로 처리
+		}
+
+		myinfoService.deleteMember(member.getMembers_id());//member_id를 가져와서 삭제
+		session.invalidate();// 로그아웃 처리
 		return "redirect:/";
-		
+
 	}
 
 }

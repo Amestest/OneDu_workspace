@@ -28,6 +28,11 @@ public class MyInfoService {
 		myinfoMapper.updateMember(members);
 	}
 	
+	//비밀번호 변경
+	public void pwChange (Members members) {
+		myinfoMapper.pwChange(members);
+	}
+	
 	//회원 탈퇴
 	public void deleteMember(String members_id) {
 		myinfoMapper.deleteMember(members_id);

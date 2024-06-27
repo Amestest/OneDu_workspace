@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -68,43 +68,15 @@ button {
 </style>
 </head>
 <body>
-<!--
 	<div class="container">
-		<form class="content">
-			<h1>
-				<strong>회원 정보</strong>
-			</h1>
-			<img src="image/user (2).png" /> 이름 :
-			<p type="text" th:field="${members_name}"></p>
-
-			생년월일 :
-			<p type="text" th:field="${members_birth}"></p>
-
-			이메일 :
-			<p type="text" th:field="${members_email}"></p>
-
-			휴대폰 번호 :
-			<p type="text" th:field="${members_phone}"></p>
-
-			주소 :
-			<p type="text" th:field="${members_address}"></p>
-
-			<br> <br>
-		
-		<a th:href="@{/mypage_infoModify}">마이페이지 수정하기</a>
-		<button type="button" class="info_cancel" onclick="cancelUpdate()">취소하기</button>
-</form>
-
-
-	</div>
-  -->
-  <div class="container">
 		<h1>
 			<strong>회원 정보</strong>
 		</h1>
-		<form th:action="@{mypage_infoModify}" th:object="${members}" method="post">
-			<img src="image/user (2).png" />
-			<div class="content">
+
+		<div class="content">
+
+			<form th:action="@{mypage_infoModify}" th:object="${members}" method="post">
+				<img src="image/user (2).png" />
 
 				<div>
 					<h6>이름</h6>
@@ -137,17 +109,26 @@ button {
 				</div>
 
 				<a th:href="@{/mypage_infoModify}">수정하기</a>
-				<button class="info_check">확인</button>
+				<a th:href="@{/mypage_home}" id="confirmButton">확인하기</a>
 				<!--  button = button submit reset  -->
-			</div>
-		</form>
+			</form>
+		</div>
+
 
 	</div>
-  
+
+
+
 	<script>
 		function cancelUpdate() {
 			alert('수정이 취소되었습니다.');
 		}
+		
+		document.getElementById("confirmButton").addEventListener("click", function() {
+            window.location.href = "/mypage_home"; // 마이페이지 홈으로 이동
+        });
+		
+		
 	</script>
 
 

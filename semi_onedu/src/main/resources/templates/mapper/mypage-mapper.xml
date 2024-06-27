@@ -25,6 +25,12 @@
 		WHERE members_id = #{members_id}
 	</update>
 	
+	<update id="pwChange" parameterType="com.onedumall.dto.Members">
+		UPDATE members
+		SET members_pw = #{members_pw}
+		WHERE members_id = #{members_id}
+	</update>
+	
 	
 	<delete id="deleteMember" parameterType="String">
 		DELETE FROM members

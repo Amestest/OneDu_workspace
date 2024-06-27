@@ -18,6 +18,9 @@ public interface MyinfoMapper {
 	//개인정보 변경
 	void updateMember(Members members);
 	
+	//비밀번호 변경
+	void pwChange(Members members);
+	
 	//로그인
 	Members getLogin(@Param("members_id") String members_id, @Param("members_pw") String members_pw);
 	

@@ -57,46 +57,38 @@
     
   </head>
   <body>
-    
       <div class="container">
         <h1><strong>비밀번호 변경</strong></h1>
         
-        <form class="content" th:object="${members}" method="post">
+        <form class="content" th:action="@{/pwChange}" th:object="${members}" method="post">
           <lable>현재 비밀번호 : </lable>
-          <input type="password" id="password" required>
+          <input type="password" id="currentPassword" name="currentPassword" required>
           <br>
           
 
           <lable>새 비밀번호 :</lable>
-          <input type="password" id="newPassword">
+          <input type="password" id="newPassword" name="newPassword">
           <p id="정규식메세지"></p>
 
 
           <lable>새 비밀번호 확인 :</lable>
-          <input type="password" id="newPasswordConfirm">
+          <input type="password" id="newPasswordConfirm" name="newPasswordConfirm">
           <p id="msg"></p>
           
           <br>
 
-          <button class="info_check" onclick="pwChange()">변경</button>
-          <button class="info_cancle" onclick="pwChangeCancle()">취소</button>
+          <button class="info_check" type="submit">변경</button>
+          <button class="info_cancle" type="button" onclick="pwChangeCancle()">취소</button>
         </form>
       </div>
       
       <script>
-      
-      function pwChange() {
-	        alert('변경이 완료되었습니다.');
-	    }
-      
-	    function pwChangeCancle() {
+     function pwChangeCancle() {
 	        alert('변경이 취소되었습니다.');
+	        window.location.href = "/mypage_home"
 	    }
 	    
-	    
-	</script>
-	
-	<script>
+	  
        $(document).ready(function () {
         $("#newPassword").on("input", function () {
           const 비밀번호 = $(this).val();
