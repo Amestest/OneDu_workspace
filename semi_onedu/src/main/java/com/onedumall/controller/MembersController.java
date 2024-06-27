@@ -40,7 +40,7 @@ public class MembersController {
 	
 	@PostMapping("/register")
 	public String insertRegister(Members members, Model model) {
-		log.info("1"+members.getMembers_pw());
+		log.info("1"+members.getMembers_id());
 		registerService.insertRegister(members);
 		log.info("2");
 		model.addAttribute("msg","회원가입이 성공적으로 완료됐습니다.");		
