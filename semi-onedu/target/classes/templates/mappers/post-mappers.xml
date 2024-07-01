@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+          PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+          "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mapper.PostMapper">
+
+	<select id="getAllPost" resultType="com.example.dto.Post">
+		SELECT * FROM POST
+	</select>
+
+	<select id="getPostById" resultType="com.example.dto.Post" parameterType="int">
+		SELECT * FROM POST
+		WHERE POST_NO = #{post_no}
+	</select>
+	<insert id="postRegister" parameterType="com.example.dto.Post">
+		INSERT INTO post
+		
+		(post_no, post_info, post_date, post_title)
+		VALUES (post_seq.NEXTVAL,
+		
+		#{post_info}, #{post_date}, #{post_title})
+	</insert>
+	<update id="updatePost" parameterType="com.example.dto.Post">
+		UPDATE POST
+		SET post_title = #{post_title},
+			post_info = #{post_info}
+		WHERE post_no = #{post_no}	
+	</update>
+	
+	
+	<!-- QnA -->
+	
+	<select id="getAllQnA" resultType="com.example.dto.Post">
+		SELECT * FROM QUESTION
+	</select>
+
+	<select id="getQnAById" resultType="com.example.dto.Post" parameterType="int">
+		SELECT * FROM QUESTION
+		WHERE QUESTION_NO = #{question_no}
+	</select>
+	<insert id="QnARegister" parameterType="com.example.dto.Post">
+		INSERT INTO question
+		(question_no, question_info, question_date, question_title)
+		
+		VALUES (question_seq.NEXTVAL,
+		#{question_info}, #{question_date}, #{question_title})
+	</insert>
+	<update id="updateQnA" parameterType="com.example.dto.Post">
+		UPDATE QUESTION
+		SET question_title = #{question_title},
+			question_info = #{question_info}
+		WHERE question_no = #{question_no}	
+	</update>
+	
+	
+
+</mapper>

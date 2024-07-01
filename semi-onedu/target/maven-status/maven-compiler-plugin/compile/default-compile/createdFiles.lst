@@ -1,0 +1,5 @@
+com\example\mapper\PostMapper.class
+com\example\SemiOneduApplication.class
+com\example\service\PostService.class
+com\example\dto\Post.class
+com\example\controller\PostController.class
