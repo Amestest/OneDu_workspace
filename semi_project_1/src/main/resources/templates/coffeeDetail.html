@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>상세보기</title>
+		<link rel="stylesheet" href="/css/styles.css">
+	</head>
+	<body>
+		<h1>상세보기</h1>
+		<div class="container">
+			<h1 th:text="${coffee.coffee_name} + ' 상세 정보'"></h1>
+			<div class="detail">
+				<img th:src="@{${coffee.coffee_image_path}}">
+			</div>
+			<div class="detail">
+				<span th:text="${coffee.coffee_name}"></span><br>
+				<span th:text="${coffee.coffee_description}"></span><br>
+				<span th:text="${coffee.coffee_cuppingnote}"></span><br>
+			</div>
+		</div>
+	</body>
+</html>
