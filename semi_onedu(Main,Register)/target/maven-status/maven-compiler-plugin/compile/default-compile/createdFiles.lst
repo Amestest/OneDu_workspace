@@ -1,0 +1,5 @@
+com\onedumall\service\RegisterService.class
+com\onedumall\SemiOneduApplication.class
+com\onedumall\dto\Members.class
+com\onedumall\controller\MembersController.class
+com\onedumall\mapper\RegisterMapper.class
