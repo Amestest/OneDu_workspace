@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+	<!-- <insert id="insertMember" parameterType="com.shoppingmall.dto.Member"> 
+		INSERT INTO member (member_id, username, password, email, created_at) VALUES 
+		(member_seq.NEXTVAL, #{username}, #{password}, #{email}, default) </insert> 
+		<select id="getAllMember" resultType="com.shoppingmall.dto.Member"> SELECT 
+		* FROM member </select> -->
+	<!-- select -->
+	
+
+
+<mapper namespace="com.example.demo.mapper.CoffeeMapper">
+	<!-- 모든 커피 정보 가져오기 -->
+	<select id="getAllCoffees" resultType="com.example.demo.dto.Coffee">
+		SELECT * FROM coffee
+	</select>
+	
+	<!-- 커피 정보 상세보기 -->
+	<select id="getCoffeeById" resultType="com.example.demo.dto.Coffee" parameterType="int">
+		SELECT * FROM coffee
+		WHERE coffee_id = #{coffee_id}
+	</select>
+</mapper>
