@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.khmall.mapper.ProductMapper">
-	<insert id="insertProduct" parameterType="com.khmall.dto.Product">
+	<insert id="INSERTPRODUCT" parameterType="com.khmall.dto.Product">
 	INSERT INTO PRODUCT( PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_COUNT,PRODUCT_OPTION)
 	VALUES (#{PRODUCT_NAME}, #{PRODUCT_PRICE}, #{PRODUCT_COUNT},#{PRODUCT_OPTION})	
 	</insert>

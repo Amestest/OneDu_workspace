@@ -19,10 +19,10 @@
         <div class="col-md-6">
             <div class="product-details">
                 <h1 class="product-title" id="productTitle">디카페인 브라질 원두 커피</h1>
-                  <input type="text" id="productName" name="Product_name" th:value="${product.PRODUCT_NAME}">
+                  <input type="text" id="productName" name="PRODUCT_NAME" th:value="${product.PRODUCT_NAME}">
                 <div class="dropdown mb-3">
                     <label for="category">분쇄방법</label>
-                    <select id="category" class="form-select" name="Product_option"th:value="${product.PRODUCT_OPTION}">
+                    <select id="category" class="form-select" name="PRODUCT_OPTION" th:value="${product.PRODUCT_OPTION}">
                         <option value="">-- 옵션을 선택하세요 --</option>
                         <option value="모카포트">모카포트</option>
                         <option value="에스프레소">에스프레소</option>
@@ -45,7 +45,7 @@
                     <input type="number" id="quantity" class="form-control quantity-input" value="1" min="1" th:field="${product.PRODUCT_COUNT}">
                 </div>
                 <p id="totalAmount" th:field="${product.PRODUCT_PRICE}">총 상품금액: 9,900원</p>
-                <input type="hidden" id="productPrice" name="Product_price" th:value="${product.PRODUCT_PRICE}">
+                <input type="hidden" id="productPrice" name="PRODUCT_PRICE" th:value="${product.PRODUCT_PRICE}">
                 
                 <button id="btn" class="btn btn-primary btn-custom">장바구니 담기</button>
                 <button id="purchaseBtn" class="btn btn-success btn-custom">구매하기</button>

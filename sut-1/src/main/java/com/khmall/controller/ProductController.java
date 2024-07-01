@@ -17,7 +17,7 @@ public class ProductController {
 
 	@GetMapping("/")
 	public String getStart() {
-		return "index";
+		return "product-index";
 	}
 
 	@GetMapping("/product")
@@ -27,7 +27,7 @@ public class ProductController {
 	}
 
 	@PostMapping("/product")
-	public String insertProduct(@RequestParam("PRODUCT_OPTION") String PRODUCT_OPTION,
+	public String INSERTPRODUCT(@RequestParam("PRODUCT_OPTION") String PRODUCT_OPTION,
 								@RequestParam("PRODUCT_COUNT") int PRODUCT_COUNT, 
 								@RequestParam("PRODUCT_PRICE") int PRODUCT_PRICE,
 								@RequestParam("PRODUCT_NAME") String PRODUCT_NAME) {
@@ -38,7 +38,7 @@ public class ProductController {
 		System.out.println("PRODUCT_PRICE : " + PRODUCT_PRICE);
 		System.out.println("PRODUCT_NAME : " + PRODUCT_NAME);
 
-		productService.insertProduct(PRODUCT_OPTION, PRODUCT_COUNT, PRODUCT_PRICE, PRODUCT_NAME);
+		productService.INSERTPRODUCT(PRODUCT_OPTION, PRODUCT_COUNT, PRODUCT_PRICE, PRODUCT_NAME);
 		return "redirect:/";
 	}
 }

@@ -12,7 +12,7 @@ import com.khmall.dto.Product;
 public interface ProductMapper {
 
 	
-	public void insertProduct(Product product);
+	public void INSERTPRODUCT(Product product);
 	
 		
 
