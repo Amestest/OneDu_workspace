@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>원두취향테스트</title>
+    <link rel="stylesheet" href="css/coffeeBeanTest1.css">
+      
+    </link>
+  </head>
+  <body>
+    <h1>원두 취향 테스트</h1>
+    <div class="문제">
+      <p>각 질문에 대해 솔직하게 적절한 답변을 선택하세요.</p>
+      
+      <div id="문제1">
+        <p>1. 당신이 선호하는 커피의 온도를 선택해주세요</p>
+        <div class="options">
+          <div class="option" onclick="옵션선택('E')">
+            Hot
+          </div>
+          <div class="option" onclick="옵션선택('I')">
+            Ice
+          </div>
+        </div>
+      </div>
+
+      <div id="문제2" style="display: none">
+        <p>2. 당신은 어떤 향을 선호하시나요?</p>
+        <div class="options">
+          <div class="option" onclick="옵션선택('S')">
+            고소하고 달달한 향
+          </div>
+          <div class="option" onclick="옵션선택('N')">
+            화사한 꽃 향
+          </div>
+        </div>
+      </div>
+
+      <div id="문제3" style="display: none">
+        <p>3. 산미가 있는 원두를 선호하시나요?</p>
+        <div class="options">
+          <div class="option" onclick="옵션선택('T')">
+            예
+          </div>
+          <div class="option" onclick="옵션선택('F')">
+            아니오
+          </div>
+        </div>
+      </div>
+
+      <div id="문제4" style="display: none">
+        <p>4. 단 맛이 나는 원두를 선호하시나요?</p>
+        <div class="options">
+          <div class="option" onclick="옵션선택('J')">
+            예
+          </div>
+          <div class="option" onclick="옵션선택('P')">
+            아니오
+          </div>
+        </div>
+      </div>
+
+      <div id="문제5" style="display: none">
+        <div class="options">
+          <button><a>취향에 맞는 원두 보러가기</a></button>
+        </div>
+      </div>
+
+      
+
+      <div id="결과확인"></div>
+
+      <script src="js/coffeeBeanTest1copy.js"></script>
+    </div>
+  </body>
+</html>
