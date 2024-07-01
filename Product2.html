@@ -9,9 +9,6 @@
 <style>
 .container {
     max-width: 1200px;
-     display: flex;
-    justify-content: center;
-    
 }
 .product-image {
     max-width: 100%;
@@ -21,7 +18,11 @@
 .product-details {
     padding: 20px;
 }
-
+.price {
+    font-size: 1.5em;
+    color: #F911F2;
+    margin-bottom: 20px;
+}
 .quantity-input {
     width: 70px;
 }
@@ -31,35 +32,30 @@
 .btn-custom {
     width: 100%;
     margin-bottom: 10px;
-   background-color: rgb(255, 0, 0);
-   
 }
-.btn-primary{
-    width: 100%;
-    margin-bottom: 10px;
-    background-color: rgb(49, 243, 162);
+.heart{
+    border-radius: 10px;
+    box-shadow: 10px;   
+    background-color:antiquewhite
 }
-.btn-custom:hover{
-    background-color: rgb(186, 241, 131);
-    border-radius: 5px;
+.heart:hover{
+    background-color: red;
+
 }
-.btn-primary:hover{
-    background-color: aquamarine;
-    border-radius: 5px;
-}
+
 </style>
 </head>
 <body>
-<div >
+<div class="container mt-5">
     <div class="row">
-        <div >
-            <img src="https://ikongcoffee.com/web/product/big/202311/059ee694bda19be12c560736d43048dd.png" alt="Product Image" class="product-image">
+        <div class="col-md-6 d-flex justify-content-center">
+            <img src="https://ikongcoffee.com/web/product/big/202403/03861587462c2d620aedf1ccef9eea00.png" alt="Product Image" class="product-image">
         </div>
-        <div >
+        <div class="col-md-6">
             <div class="product-details">
                 <h1 class="product-title">디카페인 브라질 원두 커피</h1>
                 
-                <div >
+                <div class="dropdown mb-3">
                     <label for="category">분쇄방법</label>
                     <select id="category" class="form-select">
                         <option value="">-- 옵션을 선택하세요 --</option>
@@ -69,24 +65,28 @@
                         <option value="더치커피">더치커피</option>
                     </select>
                 </div>
-                <div >
+                <div class="dropdown mb-3">
                     <label for="subcategory">원두</label>
                     <select id="subcategory" class="form-select">
                         <option value="">-- 선택 --</option>
                     </select>
                 </div>
-                <div >
+                <div class="mb-3">
                     <label for="price">가격:</label>
                     <input type="number" id="price" class="form-control" value="9900" readonly>
                 </div>
-                <div >
+                <div class="mb-3">
                     <label for="quantity">수량:</label>
                     <input type="number" id="quantity" class="form-control quantity-input" value="1" min="1">
                 </div>
                 <p id="totalAmount">총 상품금액: 9,900원</p>
-                
-                <button id="btn" class="btn-primary ">장바구니 담기</button>
-                <button id="purchaseBtn" class="purchaseBtn btn-custom">구매하기</button>
+                <button class="heart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="boheart" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063q.068.062.132.129.065-.067.132-.129c3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3 3 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398"/>
+                  </svg>
+                </button>
+                <button id="btn" class="btn btn-primary btn-custom">장바구니 담기</button>
+                <button id="purchaseBtn" class="btn btn-success btn-custom">구매하기</button>
             </div>
         </div>
     </div>

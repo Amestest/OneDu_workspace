@@ -9,9 +9,6 @@
 <style>
 .container {
     max-width: 1200px;
-     display: flex;
-    justify-content: center;
-    
 }
 .product-image {
     max-width: 100%;
@@ -21,7 +18,11 @@
 .product-details {
     padding: 20px;
 }
-
+.price {
+    font-size: 1.5em;
+    color: #F911F2;
+    margin-bottom: 20px;
+}
 .quantity-input {
     width: 70px;
 }
@@ -31,35 +32,20 @@
 .btn-custom {
     width: 100%;
     margin-bottom: 10px;
-   background-color: rgb(255, 0, 0);
-   
-}
-.btn-primary{
-    width: 100%;
-    margin-bottom: 10px;
-    background-color: rgb(49, 243, 162);
-}
-.btn-custom:hover{
-    background-color: rgb(186, 241, 131);
-    border-radius: 5px;
-}
-.btn-primary:hover{
-    background-color: aquamarine;
-    border-radius: 5px;
 }
 </style>
 </head>
 <body>
-<div >
+<div class="container mt-5">
     <div class="row">
-        <div >
-            <img src="https://ikongcoffee.com/web/product/big/202311/059ee694bda19be12c560736d43048dd.png" alt="Product Image" class="product-image">
+        <div class="col-md-6 d-flex justify-content-center">
+            <img src="https://ikongcoffee.com/web/product/big/202311/4906ef65338c33b7ea1c86e4be446fd8.png" alt="Product Image" class="product-image">
         </div>
-        <div >
+        <div class="col-md-6">
             <div class="product-details">
                 <h1 class="product-title">디카페인 브라질 원두 커피</h1>
                 
-                <div >
+                <div class="dropdown mb-3">
                     <label for="category">분쇄방법</label>
                     <select id="category" class="form-select">
                         <option value="">-- 옵션을 선택하세요 --</option>
@@ -69,24 +55,24 @@
                         <option value="더치커피">더치커피</option>
                     </select>
                 </div>
-                <div >
+                <div class="dropdown mb-3">
                     <label for="subcategory">원두</label>
                     <select id="subcategory" class="form-select">
                         <option value="">-- 선택 --</option>
                     </select>
                 </div>
-                <div >
+                <div class="mb-3">
                     <label for="price">가격:</label>
                     <input type="number" id="price" class="form-control" value="9900" readonly>
                 </div>
-                <div >
+                <div class="mb-3">
                     <label for="quantity">수량:</label>
                     <input type="number" id="quantity" class="form-control quantity-input" value="1" min="1">
                 </div>
                 <p id="totalAmount">총 상품금액: 9,900원</p>
                 
-                <button id="btn" class="btn-primary ">장바구니 담기</button>
-                <button id="purchaseBtn" class="purchaseBtn btn-custom">구매하기</button>
+                <button id="btn" class="btn btn-primary btn-custom">장바구니 담기</button>
+                <button id="purchaseBtn" class="btn btn-success btn-custom">구매하기</button>
             </div>
         </div>
     </div>
