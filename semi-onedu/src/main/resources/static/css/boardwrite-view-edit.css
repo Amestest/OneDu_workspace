@@ -2,7 +2,7 @@
 
 
 
-* {
+body {
 	margin: 0;
 	padding: 0;
 	background-color: #F7ECDE;
@@ -43,6 +43,7 @@ a {
 .boardlist {
 	width: 100%;
 	border-top: 2px solid #000;
+	background-color: white;
 }
 
 .boardlist>div {
@@ -202,6 +203,10 @@ a {
 	line-height: 160%;
 	font-size: 1.4rem;
 }
+.board_view_wrap{
+	background-color: white;
+}
+
 
 -- 글쓰기 
 

@@ -1,4 +1,4 @@
-* {
+body {
     margin: 0;
     padding: 0;
     background-color: #F7ECDE;
@@ -63,6 +63,7 @@ a {
 .board_list {
     width: 100%;
     border-top: 2px solid #000;
+    background-color: white;
 }
 
 .board_list > div {
@@ -159,6 +160,9 @@ a {
 	width: 1000px;
 	margin: 100px auto;
 	margin-bottom: 290px;
+	
+	
+	
 }
 
 footer{
@@ -188,3 +192,4 @@ footer{
 .search-btn{
   margin-bottom: 12px;
 }
+
