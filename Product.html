@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상품 상세페이지 부트스트랩으로 정렬</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<style>
+.container {
+    max-width: 1200px;
+     display: flex;
+    justify-content: center;
+    
+}
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+.product-details {
+    padding: 20px;
+}
+
+.quantity-input {
+    width: 70px;
+}
+.product-description {
+    margin-top: 20px;
+}
+.btn-custom {
+    width: 100%;
+    margin-bottom: 10px;
+   background-color: rgb(255, 0, 0);
+   
+}
+.btn-primary{
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: rgb(49, 243, 162);
+}
+.btn-custom:hover{
+    background-color: rgb(186, 241, 131);
+    border-radius: 5px;
+}
+.btn-primary:hover{
+    background-color: aquamarine;
+    border-radius: 5px;
+}
+</style>
+</head>
+<body>
+<div >
+    <div class="row">
+        <div >
+            <img src="https://ikongcoffee.com/web/product/big/202311/059ee694bda19be12c560736d43048dd.png" alt="Product Image" class="product-image">
+        </div>
+        <div >
+            <div class="product-details">
+                <h1 class="product-title">디카페인 브라질 원두 커피</h1>
+                
+                <div >
+                    <label for="category">분쇄방법</label>
+                    <select id="category" class="form-select">
+                        <option value="">-- 옵션을 선택하세요 --</option>
+                        <option value="모카포트">모카포트</option>
+                        <option value="에스프레소">에스프레소</option>
+                        <option value="드립커피">드립커피</option>
+                        <option value="더치커피">더치커피</option>
+                    </select>
+                </div>
+                <div >
+                    <label for="subcategory">원두</label>
+                    <select id="subcategory" class="form-select">
+                        <option value="">-- 선택 --</option>
+                    </select>
+                </div>
+                <div >
+                    <label for="price">가격:</label>
+                    <input type="number" id="price" class="form-control" value="9900" readonly>
+                </div>
+                <div >
+                    <label for="quantity">수량:</label>
+                    <input type="number" id="quantity" class="form-control quantity-input" value="1" min="1">
+                </div>
+                <p id="totalAmount">총 상품금액: 9,900원</p>
+                
+                <button id="btn" class="btn-primary ">장바구니 담기</button>
+                <button id="purchaseBtn" class="purchaseBtn btn-custom">구매하기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    const subcategories = {
+        '모카포트': ['200g'],
+        '에스프레소': ['200g'],
+        '드립커피': ['200g'],
+        '더치커피': ['200g']
+    };
+
+    $("#category").change(function(){
+        const category = $(this).val();
+        const $subcategory = $("#subcategory");
+        $subcategory.empty().append('<option value="">-- 선택 --</option>');
+        if(category){
+            const options = subcategories[category];
+            options.forEach(option => {
+                $subcategory.append(new Option(option, option));
+            });
+        }
+    });
+
+    // 수량 변경 시 총 상품금액 업데이트
+    $("#quantity").change(function() {
+        updateTotalAmount();
+    });
+
+    // 장바구니 담기 버튼 클릭 시 알림
+    $("#btn").click(function() {
+        alert("장바구니에 담겼습니다.");
+    });
+
+    // 구매하기 버튼 클릭 시 알림
+    $("#purchaseBtn").click(function() {
+        alert("구매가 완료되었습니다.");
+    });
+
+    // 초기 총 상품금액 설정
+    function updateTotalAmount() {
+        var price = $("#price").val();
+        var quantity = $("#quantity").val();
+        var totalAmount = price * quantity;
+        $("#totalAmount").text("총 상품금액: " + totalAmount.toLocaleString() + "원");
+    }
+});
+</script>
+</body>
+</html>
