@@ -1,0 +1,124 @@
+body{
+    background-color:  #F7ECDE;
+    
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    
+}
+header {
+  text-align: center;
+}
+a{
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: none;
+  color: #3f2508;
+}
+.icon {
+  text-align: right;
+}
+.icon a {
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: none;
+  color: #3f2508;
+}
+.search-box{
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+}
+.menubar {
+  text-align: center;
+  background-color: #E9DAC1; 
+  padding : 10px ;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  
+}
+.menubar a {
+  margin-right: 25px;
+  text-decoration: none;
+  color: #3f2508;
+}
+.container{
+    margin: auto;
+    display: flex;
+}
+.search-box{
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+}
+.search-btn{
+  margin-bottom: 12px;
+}
+
+.register-form{
+    background-color:  #E9DAC1;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
+    width: 300px;
+    margin-top: 50px;
+}
+.container h1{
+    padding: 10px;
+    display: flex;
+    margin: auto;
+  }
+  label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+
+}
+button {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+  button:hover{
+    background-color: #54BAB9;
+  }
+  .commit{
+  width: 300px;
+  margin: 0 auto;
+  
+}
+  input {
+    width: 100%;
+    padding:8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  footer{
+    background-color: #F7ECDE;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+   
+  }
+  
+  .footer-container{
+    display: inherit;
+  
+  }
+  .footer ul{
+    display: inherit;
+    
+  }
+  .footer a{
+    margin: 20px;
+    text-decoration: none;
+    color: #3f2508   
+  }
